@@ -28,5 +28,5 @@ jobs:
           curl -X POST https://api.github.com/repos/vinayprakash893/azure-terrafrom-vny-actions/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACTIONS_KEY }} \
-          --data '{ "event_type": "Trigger Workflow", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'","worflowname2": '${{ github.event.inputs.workflow2_name }}' }}'
-      - uses: actions/checkout@v3
+          --data '{ "event_type": "Trigger Workflow", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'","worflowname2": "'${{ github.event.inputs.workflow2_name }}'" }}'
+      # - uses: actions/checkout@v3
