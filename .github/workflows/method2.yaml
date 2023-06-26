@@ -1,21 +1,21 @@
-name: workflow_01
+name: self_service_input
 on:
   workflow_dispatch:
     inputs:
-      workflow_02:
-        description: 'ًWorkflow 2 which will be triggered'
+      workspace_name:
+        description: 'ًname of the TF cloud workspace'
         required: true
-        default: 'workflow_02'
+        default: 'cloud_user_p_2f08bb21'
 
-      workflow2_name:
-        description: 'GitHub Account Owner'
+      resource_group_name:
+        description: 'Resource Group name'
         required: true
-        default: 'namevalue'
+        default: '1-cdcbf205-playground-sandbox'
 
-      workflow2_type:
-        description: 'repo-name'
+      storage_account_name:
+        description: 'storage_account_name'
         required: true
-        default: 'typevalue' 
+        default: 'mystoragevnyacgtest' 
 
 jobs:
   build:
@@ -28,5 +28,5 @@ jobs:
           curl -X POST https://api.github.com/repos/vinayprakash893/azure-terrafrom-vny-actions/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACTIONS_KEY }} \
-          --data '{ "event_type": "Trigger Workflow", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'","worflowname2": "'${{ github.event.inputs.workflow2_name }}'" }}'
+          --data '{ "event_type": "Trigger Workflow", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'","workspace_name": "'${{ github.event.inputs.workspace_name }}'","resource_group_name": "'${{ github.event.inputs.resource_group_name }}'","storage_account_name": "'${{ github.event.inputs.storage_account_name }}'" }}'
       # - uses: actions/checkout@v3
