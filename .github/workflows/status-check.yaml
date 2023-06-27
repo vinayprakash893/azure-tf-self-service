@@ -1,4 +1,4 @@
-name: 'release-version'
+name: 'status'
 on:
   workflow_dispatch:
 
@@ -18,7 +18,7 @@ jobs:
         uses: LASER-Yi/workflow-status@v0.0.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: method2.yaml
+          workflow: method2sss.yaml
           # event: push
           branch: main
           
