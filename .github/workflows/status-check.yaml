@@ -30,6 +30,6 @@ jobs:
 
       - name: fail
         if: ${{ steps.check-ci.outputs.conclusion == 'failure' }}
-        run: # Release scripts
+        run: |
           echo "failure"
           exit 1
