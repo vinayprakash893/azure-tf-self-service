@@ -1,0 +1,28 @@
+name: 'release-version'
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Build
+        run: # Build scripts
+          echo "building"
+        
+      - name: Check CI
+        id: check-ci
+        uses: LASER-Yi/workflow-status@v0.0.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: method2.yaml
+          # event: push
+          branch: main
+          
+      - name: Release
+        if: ${{ steps.check-ci.outputs.conclusion == 'success' }}
+        run: # Release scripts
+          echo "success"
