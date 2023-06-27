@@ -18,7 +18,7 @@ jobs:
         uses: LASER-Yi/workflow-status@v0.0.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: method2sss.yaml
+          workflow: caller.yaml
           # event: push
           branch: main
           
