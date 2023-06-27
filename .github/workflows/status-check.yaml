@@ -33,3 +33,4 @@ jobs:
         run: |
           echo "failure"
           exit 1
+          echo "failed"
