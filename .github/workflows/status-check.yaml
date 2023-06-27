@@ -18,7 +18,7 @@ jobs:
         uses: LASER-Yi/workflow-status@v0.0.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: self-service-call-payload.yaml
+          workflow: approval_process.yml
           # event: push
           repo: vinayprakash893/azure-terrafrom-vny-actions
           branch: main
