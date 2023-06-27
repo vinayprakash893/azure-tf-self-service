@@ -18,12 +18,18 @@ jobs:
         uses: LASER-Yi/workflow-status@v0.0.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: fail-workflow.yml
+          workflow: fail-workflow.yaml
           # event: push
           repo: vinayprakash893/azure-terrafrom-vny-actions
           branch: main
           
-      - name: Release
+      - name: success
         if: ${{ steps.check-ci.outputs.conclusion == 'success' }}
         run: # Release scripts
           echo "success"
+
+      - name: fail
+        if: ${{ steps.check-ci.outputs.conclusion == 'failure' }}
+        run: # Release scripts
+          echo "failure"
+          ecit 1
