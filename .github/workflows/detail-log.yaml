@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
-          repository: ${{ github.event.vnyname }}
+          repository: ${{ github.event.client_payload.vnyname }}
         run: echo $repository
 
 
