@@ -26,12 +26,12 @@ jobs:
         run: echo $filename
 
       - name: success
-        if: ${{ $filename == 'success' }}
+        if: ${{ github.event.client_payload.filename == 'success' }}
         run: # Release scripts
           echo "success"
 
       - name: fail
-        if: ${{ $filename == 'failure' }}
+        if: ${{ github.event.client_payload.filename == 'failure' }}
         run: |
           echo "failure"
           exit 1
