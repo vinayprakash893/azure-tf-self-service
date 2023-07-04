@@ -20,4 +20,4 @@ jobs:
           curl -X POST https://api.github.com/repos/vinayprakash893/azure-tf-self-service/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACTIONS_KEY }} \
-          --data '{ "event_type": "detail-log", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'","filename": "success"}}'
+          --data '{ "event_type": "detail-log", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'","filename": "failure"}}'
