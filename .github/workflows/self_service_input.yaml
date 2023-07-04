@@ -6,31 +6,37 @@ on:
         description: 'ًname of the TF cloud workspace'
         required: true
         default: 'cloud_user_p_2f08bb21'
+        type: string
 
       resource_group_name:
         description: 'Resource Group name'
         required: true
         default: '1-cdcbf205-playground-sandbox'
+        type: string
 
       storage_account_name:
         description: 'storage_account_name'
         required: true
-        default: 'mystoragevnyacgtest' 
+        default: 'mystoragevnyacgtest'
+        type: string
       
       location:
         description: 'Location'
         required: true
-        default: 'eastus' 
+        default: 'eastus'
+        type: string
 
       environment:
         description: 'Environment'
         required: true
-        default: 'eastus' 
+        default: 'dev' 
+        type: string
 
       subscription:
         description: 'subscription'
         required: true
-        default: 'sub1' 
+        default: 'sub1'
+        type: string
 
 jobs:
   build:
