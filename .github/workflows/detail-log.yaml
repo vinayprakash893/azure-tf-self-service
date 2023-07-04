@@ -21,7 +21,9 @@ jobs:
       - env:
           repository: ${{ github.event.client_payload.vnyname }}
         run: echo $repository
-
+      - env:
+          filename: ${{ github.event.client_payload.filename }}
+        run: echo $filename
 
       # - uses: actions/checkout@v3
 
