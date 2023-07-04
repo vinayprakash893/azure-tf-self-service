@@ -25,6 +25,17 @@ jobs:
           filename: ${{ github.event.client_payload.filename }}
         run: echo $filename
 
+      - name: success
+        if: ${{ $filename == 'success' }}
+        run: # Release scripts
+          echo "success"
+
+      - name: fail
+        if: ${{ $filename == 'failure' }}
+        run: |
+          echo "failure"
+          exit 1
+
       # - uses: actions/checkout@v3
 
       # - name: writing logs
