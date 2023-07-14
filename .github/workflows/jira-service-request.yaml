@@ -19,25 +19,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
-          full-payload: ${{ github.event.client_payload }}
-        run: echo $full-payload
-      - env:
           repository: ${{ github.event.client_payload.repository }}
         run: echo $repository
       - env:
-          filename: ${{ github.event.client_payload.filename }}
-        run: echo $filename
+          envro: ${{ github.event.client_payload.envro }}
+        run: echo $envro
 
-      - name: success
-        if: ${{ github.event.client_payload.filename == 'success' }}
-        run: # Release scripts
-          echo "success"
+      # - name: success
+      #   if: ${{ github.event.client_payload.filename == 'success' }}
+      #   run: # Release scripts
+      #     echo "success"
 
-      - name: fail
-        if: ${{ github.event.client_payload.filename == 'failure' }}
-        run: |
-          echo "failure"
-          exit 1
+      # - name: fail
+      #   if: ${{ github.event.client_payload.filename == 'failure' }}
+      #   run: |
+      #     echo "failure"
+      #     exit 1
 
       # - uses: actions/checkout@v3
 
