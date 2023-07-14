@@ -19,14 +19,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
-          repository: ${{ github.event.client_payload.repository }}
-        run: echo $repository
-      - env:
-          envro: ${{ github.event.client_payload.envro }}
-        run: echo $envro
-      - env:
-          summary: ${{ github.event.client_payload.summary }}
-        run: echo $summary
+          Summary: ${{ github.event.client_payload.Summary }}
+          Storageaccount: ${{ github.event.client_payload.Storageaccount }}
+          Subscription: ${{ github.event.client_payload.Subscription }}
+          Environment: ${{ github.event.client_payload.Environment }}
+        run: |
+          echo $Summary
+          echo $Storageaccount
+          echo $Subscription
+          echo $Environment
+      # - env:
+      #     envro: ${{ github.event.client_payload.envro }}
+      #   run: echo $envro
+      # - env:
+      #     summary: ${{ github.event.client_payload.summary }}
+      #   run: echo $summary
 
         
 
