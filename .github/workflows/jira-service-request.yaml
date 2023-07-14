@@ -24,6 +24,11 @@ jobs:
       - env:
           envro: ${{ github.event.client_payload.envro }}
         run: echo $envro
+      - env:
+          summary: ${{ github.event.client_payload.summary }}
+        run: echo $summary
+
+        
 
       # - name: success
       #   if: ${{ github.event.client_payload.filename == 'success' }}
