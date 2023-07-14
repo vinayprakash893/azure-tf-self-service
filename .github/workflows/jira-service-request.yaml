@@ -19,7 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
-          repository: ${{ github.event.client_payload.vnyname }}
+          full-payload: ${{ github.event.client_payload }}
+        run: echo $full-payload
+      - env:
+          repository: ${{ github.event.client_payload.repository }}
         run: echo $repository
       - env:
           filename: ${{ github.event.client_payload.filename }}
