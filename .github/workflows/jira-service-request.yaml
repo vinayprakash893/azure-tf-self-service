@@ -20,11 +20,13 @@ jobs:
     steps:
       - env:
           Summary: ${{ github.event.client_payload.Summary }}
+          Key: ${{ github.event.client_payload.Key }}
           Storageaccount: ${{ github.event.client_payload.Storageaccount }}
           Subscription: ${{ github.event.client_payload.Subscription }}
           Environment: ${{ github.event.client_payload.Environment }}
         run: |
           echo $Summary
+          echo $Key
           echo $Storageaccount
           echo $Subscription
           echo $Environment
