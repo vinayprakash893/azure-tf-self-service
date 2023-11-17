@@ -33,7 +33,7 @@ jobs:
 
       - name: Write Payload to input-data.json
         run: |
-          echo "Original Payload: ${{ github.event.client_payload }}"
-          echo "JSON Payload: $(toJson(github.event.client_payload))"
-          echo '$(toJson(github.event.client_payload))' > input-data.json
+          echo "Original Payload: ${{ github.event.client_payload.repository }}"
+          echo "JSON Payload: $(toJson(github.event.client_payload.repository ))"
+          echo '$(toJson(github.event.client_payload.repository ))' > input-data.json
           cat input-data.json
