@@ -18,9 +18,9 @@ jobs:
     #if: ${{ !github.event.client_payload.passed }}
     runs-on: ubuntu-latest
     steps:
-      - env:
-          all: ${{ github.event.client_payload }}
-        run: echo $repository
+      # - env:
+      #     all: ${{ github.event.client_payload }}
+      #   run: echo $repository
 
       - name: Write Payload to input-data.json
         run: |
