@@ -1,0 +1,28 @@
+name: json-decode
+
+on:
+  repository_dispatch:
+    types: [json-decode]
+
+permissions:
+  id-token: write
+  contents: write
+  issues: write
+  pull-requests: write
+  repository-projects: write
+
+#need to add below permission in Setting 
+
+jobs:
+  Changing-the_stuffs:
+    #if: ${{ !github.event.client_payload.passed }}
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          all: ${{ github.event.client_payload }}
+        run: echo $repository
+
+      - name: Write Payload to input-data.json
+        run: |
+          echo "${{ toJson(github.event.client_payload.workflow_data) }}" > input-data.json
+          cat input-data.json
