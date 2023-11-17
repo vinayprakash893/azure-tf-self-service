@@ -1,0 +1,1 @@
+[![Build Status](https://img.shields.io/github/actions/workflow/status/vinayprakash893/azure-tf-self-service/status-check.yaml?branch=main)](https://github.com/vinayprakash893/azure-tf-self-service/actions)
