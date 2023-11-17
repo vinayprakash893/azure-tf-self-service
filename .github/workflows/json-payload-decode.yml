@@ -22,17 +22,22 @@ jobs:
       #     all: ${{ github.event.client_payload }}
       #   run: echo $repository
 
-      # - name: Write Payload to input-data.json
-      #   run: |
-      #     echo "${{ toJson(github.event.client_payload.workflow_data) }}" > input-data.json
-      #     cat input-data.json
-      - name: Install jq
-        run: |
-          sudo apt-get update
-          sudo apt-get install jq
-
       - name: Write Payload to input-data.json
         run: |
-          rawdata=$(echo '${{ toJson(github.event.client_payload.rawdata) }}')
-          echo "$rawdata" > rawdata.json
-          cat rawdata.json
+          echo '${{ toJson(github.event.client_payload.rawdata) }}' > input-data.json
+          cat input-data.json
+      # - name: Install jq
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install jq
+      # - name: Extract rawdata from JSON payload
+      #   run: |
+      #     rawdata=$(echo '${{ toJson(github.event.client_payload.rawdata) }}' | jq -c .)
+      #     echo "$rawdata" > rawdata.json
+      #     cat rawdata.json
+
+      # - name: Write Payload to input-data.json
+      #   run: |
+      #     rawdata=$(echo '${{ toJson(github.event.client_payload.rawdata) }}')
+      #     echo "$rawdata" > rawdata.json
+      #     cat rawdata.json
