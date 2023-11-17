@@ -35,5 +35,7 @@ jobs:
         run: |
           echo "Original Payload: ${{ github.event.client_payload.repository }}"
           echo "JSON Payload: $(toJson(github.event.client_payload.repository ))"
-          echo '$(toJson(github.event.client_payload.repository ))' > input-data.json
-          cat input-data.json
+          echo '$(toJson(github.event.client_payload.repository ))' 
+          echo "Original Payload: ${{ github.event.client_payload.rawdata }}"
+          echo "JSON Payload: $(toJson(github.event.client_payload.rawdata ))"
+          echo '$(toJson(github.event.client_payload.rawdata ))' 
